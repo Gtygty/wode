@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toggle</title>
+</head>
+<body>
+	<ul class="parent">
+    <li class="parent_item">
+        Item 1
+        <ul class="child">
+            <li class="child_item">Item child 1</li>
+        </ul>
+    </li>
+</ul>
+<script src="http://cdn.guanaitong.com/s2/mobile/V5.0/js/jquery.js"></script>
+<script>
+jQuery(document).ready(function($) {
+	$('li.parent_item').click(function(){
+    $(this).children('ul.child').toggle();
+	})
+});
+	
+</script>
+</body>
+</html>
