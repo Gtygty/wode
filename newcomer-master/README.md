@@ -73,8 +73,9 @@
 
 **实际项目中会用到ES6, 这里提供两个练习环境**
 
-   - [babelify + browserify + gulp](https://github.com/hjzheng/es6-practice)
-   - [babel + webpack](https://github.com/hjzheng/es6-practice-webpack)
+[babelify + browserify + gulp](https://github.com/hjzheng/es6-practice)
+   
+[babel + webpack](https://github.com/hjzheng/es6-practice-webpack)
 
 1. [阮一峰的 ES6入门](http://es6.ruanyifeng.com/)
 2. 关于 ES6 与 AngularJS 1.x 如何结合使用
