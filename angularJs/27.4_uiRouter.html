@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>27.4 UI Route</title>
+		<base href="/" />
+		<style>
+			table {
+				width: 800px;
+			}
+			
+			.leftMenu {
+				width: 200px;
+				height: 500px;
+			}
+			
+			.leftMenu a {
+				display: block;
+			}
+			
+			.mainContent {
+				background: #ccc;
+			}
+			
+			.activeState {
+				background-color: black;
+				color: white
+			}
+		</style>
+
+	</head>
+
+	<body ng-app="myModule">
+
+		<table border="1" cellspacing="1" cellpadding="1">
+			<tr>
+				<td colspan="2">
+					<h1>Website Header</h1></td>
+			</tr>
+			<tr>
+				<td class="leftMenu">
+					<a ui-sref="home" ui-sref-active="activeState">Home</a>
+					<a ui-sref="courses" ui-sref-active="activeState">Courses</a>
+					<a ui-sref="employeesParent.employees" ui-sref-active="activeState">Employees</a>
+				</td>
+				<td class="mainContent">
+					<ui-view></ui-view>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="footer">
+					<b>Website Footer</b>
+				</td>
+			</tr>
+		</table>
+
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script type="text/javascript" src="js/angular-ui-router.js"></script>
+		<script type="text/javascript" src="js/27.4_uiRoute.js"></script>
+	</body>
+
+</html>

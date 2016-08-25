@@ -1,0 +1,55 @@
+{
+    "rows": [
+        {
+            "id": 43,
+            "firstName": "Fang444",
+            "lastName": "vane",
+            "gender": 1,
+            "brief": "brief简历XXXXXXXXXXXX",
+            "product": "这里是他做的产品",
+            "work": "我的工作经历很多",
+            "dpid": "17"
+        },
+        {
+            "id": 44,
+            "firstName": "Sara",
+            "lastName": "rose",
+            "gender": 2,
+            "brief": "",
+            "product": "",
+            "work": "",
+            "dpid": "17"
+        },
+        {
+            "id": 45,
+            "firstName": "Mark",
+            "lastName": "bear",
+            "gender": 1,
+            "brief": "",
+            "product": "",
+            "work": "",
+            "dpid": "18"
+        },
+        {
+            "id": 46,
+            "firstName": "Pam",
+            "lastName": "hot",
+            "gender": 1,
+            "brief": "",
+            "product": "",
+            "work": "",
+            "dpid": "19"
+        },
+        {
+            "id": 47,
+            "firstName": "Who",
+            "lastName": "is",
+            "gender": 2,
+            "brief": "",
+            "product": "",
+            "work": "",
+            "dpid": "21"
+        }
+    ],
+    "total": "20"
+}

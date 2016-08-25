@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>5.1 ng-repeat</title>
+	</head>
+
+	<body ng-app="myModule">
+		<div ng-controller="myController">
+			Select View:
+			<select ng-model="viewTemplate">
+				<option value="14.2.1_template.html">Table</option>
+				<option value="14.2.2_template.html">List</option>
+			</select>
+			<div ng-include="viewTemplate"></div>
+		</div>
+
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/14.2_ng-include.js"></script>
+	</body>
+
+</html>

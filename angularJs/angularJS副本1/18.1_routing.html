@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>18.1 routing</title>
+		<style>
+			table {
+				width: 800px;
+			}
+			
+			.leftMenu {
+				width: 200px;
+				height: 500px;
+			}
+			
+			.leftMenu a {
+				display: block;
+			}
+			
+			.mainContent {
+				background: #ccc;
+			}
+		</style>
+	</head>
+
+	<body ng-app="myModule">
+
+		<table border="1" cellspacing="1" cellpadding="1">
+			<tr>
+				<td colspan="2">
+					<h1>Website Header</h1></td>
+			</tr>
+			<tr>
+				<td class="leftMenu">
+					<a href="#/home">Home</a>
+					<a href="#/courses">Courses</a>
+					<a href="#/employees">employees</a>
+				</td>
+				<td class="mainContent">
+					 <ng-view></ng-view>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="footer">
+					<b>Website Footer</b>
+				</td>
+			</tr>
+		</table>
+
+
+
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script type="text/javascript" src="js/angular-route.min.js"></script>
+		<script type="text/javascript">
+
+		var myApp = angular.module('myModule',['ngRoute'])
+		.config(function($routeProvider){
+			$routeProvider
+			.when("/home", {
+				templateUrl: "Templates/18/home.html",
+				controller: "homeController"
+			})
+			.when("/courses",{
+				templateUrl:"Templates/18/courses.html",
+				controller:"coursesController"
+			})
+			.when('/employees',{
+				templateUrl:"Templates/18/employees.html",
+				controller:"employeesController"
+			})
+			/*
+			1.修改when的寻址的地址，也就是when后面的第一个内容
+			2.新建一个详情的模板页
+			3.新建一个控制器，控制器中需要注入新的服务内容，是$routeParams
+			4.修改列表页模板，增加a链接，以便链接到详情页，并将参数在URL中传递过去
+			*/
+			.when('/employees/:id',{
+				templateUrl:"Templates/18/employeedetail.html",
+				controller:"employeeDetailController"
+			})
+
+			.otherwise({
+				redirectTo:'/home'
+			})
+		})
+		.controller('homeController', function($scope){
+			$scope.message = "Angular Route";
+		})
+		.controller('coursesController',  function($scope){
+			$scope.courses = ['Android','Ios','H5','Java','Php'];			
+		})
+		.controller('employeesController', ['$scope','$http', function($scope,$http){
+			$http({
+				url:'/api/employees_1',
+				method:'post'
+			}).then(function(response){
+				$scope.employees = response.data.rows;
+			},function(error){
+				console.log(error);
+			})
+		}])
+		.controller('employeeDetailController', ['$scope','$http','$routeParams', function($scope,$http,$routeParams){
+			console.log($routeParams.id);
+			//直接查询请示详情页内容模式
+			// $http({
+			// 	url:'/api/employee_detail_'+$routeParams.id,
+			// 	method:'post'
+			// }).then(function(res){
+			// 	console.log(res.data);
+			// },function(error){
+			// 	console.log(error);
+			// })
+			
+
+
+			$http({
+				url:'/api/employees_1',
+				method:'post'
+			}).then(function(res){
+				var result = res.data.rows;
+				for(var i=0;i<result.length;i++){
+					console.log(result[i].id)
+					if(result[i].id == $routeParams.id){
+						$scope.employee = result[i];
+					}
+				}
+				
+			},function(error){
+				console.log(error);
+			})
+		}])
+
+		</script>
+	</body>
+
+</html>

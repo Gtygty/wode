@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body ng-app="myModule">
+
+		<div ng-controller="myController">
+			{{input | stringFilter}}
+			<table border="1" cellspacing="1" cellpadding="1">
+				<tr>
+					<td>你的字符串</td>
+					<td><input type="text" ng-model="input"></td>
+				</tr>
+				<tr>
+					<td>结果字符串</td>
+					<td><input type="text" ng-model="output"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="button" ng-click="transformString(input)" value="执行"></td>
+				</tr>
+			</table>
+
+		</div>
+
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script type="text/javascript" src="js/16.3_servcie.js"></script>
+	</body>
+
+</html>

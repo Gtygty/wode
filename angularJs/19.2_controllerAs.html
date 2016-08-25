@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>19.2 controllerAs</title>
+	</head>
+
+	<body  ng-app="myModule">
+		<!-- 输出当前控制器的name，所有控制器中输出的都是name，很难分清哪个name是哪个name -->
+		<div ng-controller="countryController">
+		    {{name}}
+		    <div ng-controller="stateController">
+		        {{name}}
+		        <div ng-controller="cityController">
+		            {{name}}
+		        </div>
+		    </div>
+		</div>
+
+		<br />
+		<!-- 
+		我们要在子节点中显示父节点的名称，需要用$parent来进行操作，层级越多，操作越复杂，识别率不高 
+		$parent我们在哪里曾经见到过？05.2的ng-repeat中就曾经操作过$parent。
+		-->
+		<div ng-controller="countryController">
+		    {{name}}
+		    <div ng-controller="stateController">
+		        {{$parent.name}} - {{name}}
+		        <div ng-controller="cityController">
+		            {{$parent.$parent.name}} - {{$parent.name}} - {{name}}
+		        </div>
+		    </div>
+		</div>
+		
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/19.2_controllerAs.js" ></script>
+	</body>
+
+</html>
