@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery.min.js"></script>
+<title>jQuery+CSS3实现跟随滚动条滑动旋转的LOGO特效（www.97zzw.com）</title>
+<script>
+$(function() {
+ var rotate = function(logo, angle) {
+  logo.css({
+  "transform" : "rotate("+angle+"deg)"
+  });
+ }
+ $(window).scroll(function(){
+  rotate($(".zhuan"), $(window).scrollTop()*0.8);
+ })
+
+});
+</script>
+<style type="text/css">
+
+body {background:#b99a7e;padding:0;font-size:14px;}
+.container {height:5000px;}
+.logo {
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:-76px 0 0 -76px;
+	background:url(images/logo.png) no-repeat 0 0
+}
+</style>
+
+</head>
+
+<body>
+<div class="container">
+<h1 style="text-align:center;margin:0 auto;padding:50px 0;width:700px;font:normal 24px/2 'MicroSoft Yahei';">预览此特效前请确保你所用的浏览器支持CSS3<br/>如果你使用的浏览器支持CSS3，请滚动浏览器滚动条查看效果！</h1>
+	<div class="logo">
+		<div class="zhuan">
+			<img src="images/logo-outside.png" width="151" height="151">
+		</div>
+	</div>
+</div>
+</body>
+</html>
