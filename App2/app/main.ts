@@ -1,8 +1,0 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-
-import AppComponent from "./common/components/app.component";
-import {APP_ROUTER_PROVIDERS} from './common/router/app.routes';
-
-bootstrap(AppComponent, [
-    APP_ROUTER_PROVIDERS
-]).catch(err => console.error(err));
