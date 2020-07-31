@@ -81,13 +81,6 @@
 
 ## Company
 
-- GitLab([链接](http://gitlab.wuxingdev.cn/))
-
-- 我的GitHub([链接](https://github.com/)) 
-
-- 关爱通企业邮箱([链接](https://exmail.qq.com/cgi-bin/frame_html?sid=TkTJRihIumXbni16,7&r=887b5920d586a8080c760391b32e3612))
-
-- 上海中智关爱通企业管理有限公司([链接](http://ciicpr.guanaitong.com/)) 
  
 
 
